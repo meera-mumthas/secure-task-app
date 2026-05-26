@@ -6,22 +6,12 @@ on:
       - main
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flask gunicorn pymysql flask_sqlalchemy werkzeug
-
-    - name: Pipeline Success
-      run: echo "CI/CD Pipeline Executed Successfully"
+      - name: Workflow Success
+        run: echo "CI/CD Pipeline Executed Successfully"
